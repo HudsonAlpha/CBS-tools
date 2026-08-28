@@ -2,7 +2,7 @@
 
 # this script is still in development and not quite "pipelinized" yet
 # the items in the hash box below should be the only things you need to change if
-# using default output from Discovery and Phaser
+# using default output from Discovery and Phase
 # However you can also customize the figures in the PlotList loop below
 
 rm(list = ls())
@@ -18,8 +18,8 @@ library(ggpubr)
 options_list <- list(
   make_option(c("-r", "--ref_file"), type = "character", default = NULL,
               help = "Path to FAI samtools file for assembly reference", metavar = "FILE"),
-  make_option(c("-p", "--phaser_path"), type = "character", default = NULL,
-              help = "Path to Phaser output folder for assembly reference", metavar = "PATH"),
+  make_option(c("-p", "--phase_path"), type = "character", default = NULL,
+              help = "Path to Phase output folder for assembly reference", metavar = "PATH"),
   make_option(c("-b", "--bin_size"), type="integer", default=100000, 
               help="Histogram bin size [default %default]", metavar="INTEGER"),
   make_option(c("-m", "--min_chr_size"), type="integer", default=2000000, 
@@ -41,9 +41,9 @@ if (is.null(opts_parsed$ref_file)) {
   print_help(input_opts)
   stop("--ref_file is required.", call.=FALSE)
 }
-if (is.null(opts_parsed$phaser_path)) {
+if (is.null(opts_parsed$phase_path)) {
   print_help(input_opts)
-  stop("--phaser_path is required.", call.=FALSE)
+  stop("--phase_path is required.", call.=FALSE)
 }
 
 ################################################################################
@@ -51,12 +51,12 @@ if (is.null(opts_parsed$phaser_path)) {
 ################################################################################
 
 # working directory
-setwd(paste(opts_parsed$phaser_path))
+setwd(paste(opts_parsed$phase_path))
 
 # prefix name for file output
 outpref <- opts_parsed$outpref
 
-# CBS-Phaser output folder name with bam/bam.bai files
+# CBS-Phase output folder name with bam/bam.bai files
 ref_fai <- paste(opts_parsed$ref_file)
 
 bin_size <- as.integer(opts_parsed$bin_size)
