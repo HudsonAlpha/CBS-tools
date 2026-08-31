@@ -126,7 +126,7 @@ CBS_Discovery.sh -k 21 -m ${MALES[@]} /path/to/other/sra/to/test -f ${FEMALES[@]
 #### Mapping options
 | Flag | Description |
 | ------------- | ------------- |
-| -s | [Male|Female] Sex-specific k-mers to map (case sensitive). Can save time by mapping k-mer lists of one sex, for example if heterogametic sex is already known. If results were inconclusive, Phase can map both sets of sex-specific k-mers by omitting this option (DEFAULT). |
+| -s | [Male or Female] Sex-specific k-mers to map (case sensitive). Can save time by mapping k-mer lists of one sex, for example if heterogametic sex is already known. If results were inconclusive, Phase can map both sets of sex-specific k-mers by omitting this option (DEFAULT). |
 |	-t | Number of threads to use, DEFAULT: 1 |
 
 #### Plotting options (if using R-packages)
