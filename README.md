@@ -7,7 +7,7 @@ The following tools are documented in our manuscript [link] and outline the step
 - We recommend starting with 6 isolates of each sex, but not required
 - Call ZW or XY system
 
-**CBS-Phase**: Map CBS-Discovery k-mer lists to genome assembly
+**CBS-Phase**: Helper tools for quickly mapping CBS-Discovery k-mer lists to genome assembly
 - Identify sex-specific contigs to assist with manual phasing
 - Optional R plots can be generated to help identify sex-linked contigs
 
@@ -115,3 +115,33 @@ CBS_Discovery.sh -k 21 -m ${MALES[@]} /path/to/other/sra/to/test -f ${FEMALES[@]
 ```
 
 ### CBS-Phase
+
+#### Required inputs
+| Flag   | Description |
+| ------------- | ------------- |
+| -d | Directory name of CBS-Discovery results, provide the full path |
+| -g | Reference genome assembly fasta(s) to align k-mers against. Multiple haplotypes or genomes can be listed separated by spaces. |
+| -k | K-mer size |
+
+#### Mapping options
+| Flag | Description |
+| ------------- | ------------- |
+| -s | [Male|Female] Sex-specific k-mers to map (case sensitive). Can save time by mapping k-mer lists of one sex, for example if heterogametic sex is already known. If results were inconclusive, Phase can map both sets of sex-specific k-mers by omitting this option (DEFAULT). |
+|	-t | Number of threads to use, DEFAULT: 1 |
+
+#### Plotting options (if using R-packages)
+| Flag | Description |
+| ------------- | ------------- |
+|	-H | Quick histogram plots to check k-mer peaks for phasing sex-linked contigs between haplotypes. |
+| -b | Bin-size used in ggcoverage histogram plots, DEFAULT: 1000000. |
+|	-m | Minimum scaffold or contig size to map to in reference assembly, DEFAULT: 2000000. |
+| -p | Prefix to add to plot file names, DEFAULT: kmer_hist. |
+
+#### General options
+| Flag | Description |
+| ------------- | ------------- |
+|	-o| Output directory path and name, DEFAULT: ./CBS_Phaser_out. |
+| -r | Redo/overwrite results in output directory. CBS Phaser's default behavior won't overwrite files of the same name in output directory. If additional k-mer lists are added to an existing Phaser run, it will skip existing outputs and only run on new inputs. If an error occurred during the job, it would be best to use -r or delete the suspect files manually and rerun without -r. |
+
+#### Example commands
+
