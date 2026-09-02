@@ -150,7 +150,7 @@ CBS_Discovery.sh -k 21 -m ${MALES[@]} /path/to/other/sra -f ${FEMALES[@]} -t 12 
 |	-H | Quick histogram plots to check k-mer peaks for phasing sex-linked contigs between haplotypes. |
 | -b | Bin-size used in ggcoverage histogram plots, DEFAULT: 1000000. |
 |	-m | Minimum scaffold or contig size to map to in reference assembly, DEFAULT: 2000000. |
-| -p | Prefix to add to plot file names, DEFAULT: kmer_hist. |
+| -p | Prefix to add to plot file names, DEFAULT: kmer_plot. |
 
 #### General options
 | Flag | Description |
@@ -181,7 +181,7 @@ The default output from CBS-Phase will include the k-mer mapping rates and samto
 
 <img width="890" height="355" alt="image" src="https://github.com/user-attachments/assets/a586d43d-e0f5-4e64-9027-79afdc740dc5" />
 
-
+Line plots with default options (bin size: 1000000, minimum scaffold size: 2000000, file prefix name: kmer_plot)
 
 
 
