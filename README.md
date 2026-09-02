@@ -181,13 +181,13 @@ The default output from CBS-Phase will include the k-mer mapping rates and samto
 
 <img width="890" height="355" alt="image" src="https://github.com/user-attachments/assets/a586d43d-e0f5-4e64-9027-79afdc740dc5" />
 
-Line plots with default options (bin size: 1000000, minimum scaffold size: 2000000, file prefix name: kmer_plot)
+Using the `-H` flag will output some additional plots:
+- k-mer mapping peaks across 100 equal sized bins (equivalent to the samtools coverage histograms), scaled and unscaled
+- smaller resolution bins (default size: 1000000) that can be set by the user with `-b`, scaled and unscaled
+- RData object of unscaled plots for manual edits
 
+Users can also set the minimum chromosome or contig size for plotting with `-m`. The file names will default to kmer_plot.assembly_name.bin_size, but with the `-p` flag, users can change the prefix 'kmer_plot'.
 
-
-
-
-
-
-
-
+```
+CBS_Phase.sh -d Discovery_out -g assembly_hap1.fasta assembly_hap2.fasta -t 4 -k 21 -s Male -H -b 10000 -m 500000 -p Species.Male_only
+```
