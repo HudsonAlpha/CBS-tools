@@ -171,10 +171,15 @@ Basic k-mer list mapping to an assembly fasta(s), multiple assemblies can be lis
 CBS_Phase.sh -d Discovery_out -g assembly_hap1.fasta assembly_hap2.fasta -t 4 -k 21
 ```
 
-Mapping only male-specific k-mers,
+Mapping only male-specific k-mers, this will also map the male subset combinations
 
+```
+CBS_Phase.sh -d Discovery_out -g assembly_hap1.fasta assembly_hap2.fasta -t 4 -k 21 -s Male
+```
 
+The default output from CBS-Phase will include the k-mer mapping rates and samtool coverage histograms as a quick visualization. However, these histograms aren't scaled across the sexes, subset combinations, or scaffolds. Users can choose to optionally create figures that will plot all k-mer lists together and scale across scaffolds (requires the R-packages under **Installation**). 
 
+<img width="890" height="355" alt="image" src="https://github.com/user-attachments/assets/a586d43d-e0f5-4e64-9027-79afdc740dc5" />
 
 
 
