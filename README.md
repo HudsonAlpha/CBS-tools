@@ -165,7 +165,13 @@ If not already done in CBS-Discovery step, export CBS-tools directory to path.
 export PATH=$PATH:path/to/CBS_tools/
 ```
 
-Basic k-mer list mapping to an assembly fasta(s).
+Basic k-mer list mapping to an assembly fasta(s), multiple assemblies can be listed separated by spaces
+
+```
+CBS_Phase.sh -d Discovery_out -g assembly_hap1.fasta assembly_hap2.fasta -t 4 -k 21
+```
+
+Mapping only male-specific k-mers,
 
 
 
