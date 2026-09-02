@@ -17,7 +17,7 @@ sex_kmers=''
 histogram_plots=0
 bin_size=1000000
 min_size=2000000
-plot_prefix="kmer_hist"
+plot_prefix="kmer_plot"
 
 print_usage() {
 	echo "Usage: $0 [Options...] -d {CBS DISCOVERY DIR} -g {REF GENOME FASTAS}"
@@ -47,7 +47,7 @@ print_usage() {
 	echo
 	echo "	-m	Minimum scaffold or contig size to map to in reference assembly, DEFAULT: 2000000"
 	echo
-	echo "	-p	Prefix to add to plot file names, DEFAULT: kmer_hist"
+	echo "	-p	Prefix to add to plot file names, DEFAULT: kmer_plot"
 	echo
 	echo "General Options:"
 	echo "	-o  Output directory path and name, DEFAULT: ./CBS_Phase_out"
