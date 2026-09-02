@@ -42,10 +42,10 @@ KMER=
 
 # If choosing to array instead of listing them all in the same job, use this:
 #GENOME=${GENOMES[${SLURM_ARRAY_TASK_ID}-1]}
-#CBS_Phase.sh -d ${DISCOVERY_OUT} -g ${GENOME} -t ${SLURM_CPUS_PER_TASK} 
+#CBS_Phase.sh -d ${DISCOVERY_OUT} -g ${GENOME} -t ${SLURM_CPUS_PER_TASK} -k ${KMER}
 
 # using defaults with plotting
-CBS_Phase.sh -d ${DISCOVERY_OUT} -g ${GENOMES[@]} -t ${SLURM_CPUS_PER_TASK} -H
+CBS_Phase.sh -d ${DISCOVERY_OUT} -g ${GENOMES[@]} -t ${SLURM_CPUS_PER_TASK} -k ${KMER} -H
 
 date "+%c --- Finished!"
 
