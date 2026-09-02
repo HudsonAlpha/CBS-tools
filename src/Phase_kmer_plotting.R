@@ -24,7 +24,7 @@ options_list <- list(
               help="Histogram bin size [default %default]", metavar="INTEGER"),
   make_option(c("-m", "--min_chr_size"), type="integer", default=2000000, 
               help="Minimum contig/scaffold size to show in plot [default %default]", metavar="INTEGER"),
-  make_option(c("-o", "--outpref"), type = "character", default = 'kmer_hist',
+  make_option(c("-o", "--outpref"), type = "character", default = 'kmer_plot',
               help = "Output file name prefix [default %default]", metavar = "STRING")
 )
 
