@@ -80,8 +80,8 @@ trimmomatic PE -threads 8 SRA12345_R1*.gz SRA12345_R2*.gz SRA12345_R1_Q30.fq.gz 
 >Make sure the meryl bin is in the path if not already done when installing meryl!
 >`export PATH=/path/to/meryl-1.4.2/bin:$PATH`
 
+Export the CBS-tools directory to path
 ```
-# export the CBS-tools directory to path
 export PATH=$PATH:path/to/CBS_tools/
 ```
 
@@ -94,7 +94,22 @@ FEMALE_PREFIXES=(SRR35506469 SRR35506467 SRR35506466 SRR35506462 SRR35506459)
 CBS_Discovery.sh -k 21 -m ${MALE_PREFIXES[@]} -f ${FEMALE_PREFIXES[@]} -t 12 -g 36 -o /path/to/Discovery_out
 ```
 
-Storing WGS in different directories could look like this:
+The find file command within CBS-Discovery will also work if the unique ID is in the middle of the file name. For example these files:
+
+```
+Ursus_arctos_Adak_Male_R1_Q30.fq.gz     Ursus_arctos_Frank_Male_R1_Q30.fq.gz  Ursus_arctos_Luna_Female_R1_Q30.fq.gz    Ursus_arctos_Willow_Female_R1_Q30.fq.gz
+Ursus_arctos_Adak_Male_R2_Q30.fq.gz     Ursus_arctos_Frank_Male_R2_Q30.fq.gz  Ursus_arctos_Luna_Female_R2_Q30.fq.gz    Ursus_arctos_Willow_Female_R2_Q30.fq.gz
+Ursus_arctos_Cooke_Female_R1_Q30.fq.gz  Ursus_arctos_John_Male_R1_Q30.fq.gz   Ursus_arctos_Oakley_Female_R1_Q30.fq.gz  Ursus_arctos_Zuri_Female_R1_Q30.fq.gz
+Ursus_arctos_Cooke_Female_R2_Q30.fq.gz  Ursus_arctos_John_Male_R2_Q30.fq.gz   Ursus_arctos_Oakley_Female_R2_Q30.fq.gz  Ursus_arctos_Zuri_Female_R2_Q30.fq.gz
+```
+
+Can be used like this:
+
+```
+CBS_Discovery.sh -k 21 -m Adak Frank John -f Luna Willow Cooke Oakley Zuri -t 12 -g 36 -o /path/to/Discovery_out
+```
+
+If the WGS files are located in a different directories, the command could be set up like this:
 
 ```
 # set FASTA input directories (leave slashes at the end!)
@@ -111,7 +126,7 @@ CBS_Discovery.sh -k 21 -m ${MALES[@]} -f ${FEMALES[@]} -t 12 -g 36 -o /path/to/D
 Even if one file is stored elsewhere this should work:
 
 ```
-CBS_Discovery.sh -k 21 -m ${MALES[@]} /path/to/other/sra/to/test -f ${FEMALES[@]} -t 12 -g 36 -o /path/to/Discovery_out -r
+CBS_Discovery.sh -k 21 -m ${MALES[@]} /path/to/other/sra -f ${FEMALES[@]} -t 12 -g 36 -o /path/to/Discovery_out -r
 ```
 
 ### CBS-Phase
@@ -144,4 +159,24 @@ CBS_Discovery.sh -k 21 -m ${MALES[@]} /path/to/other/sra/to/test -f ${FEMALES[@]
 | -r | Redo/overwrite results in output directory. CBS Phaser's default behavior won't overwrite files of the same name in output directory. If additional k-mer lists are added to an existing Phaser run, it will skip existing outputs and only run on new inputs. If an error occurred during the job, it would be best to use -r or delete the suspect files manually and rerun without -r. |
 
 #### Example commands
+If not already done in CBS-Discovery step, export CBS-tools directory to path.
+
+```
+export PATH=$PATH:path/to/CBS_tools/
+```
+
+Basic k-mer list mapping to an assembly fasta(s).
+
+
+
+
+
+
+
+
+
+
+
+
+
 
