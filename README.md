@@ -109,7 +109,7 @@ Can be used like this:
 CBS_Discovery.sh -k 21 -m Adak Frank John -f Luna Willow Cooke Oakley Zuri -t 12 -g 36 -o /path/to/Discovery_out
 ```
 
-If the WGS files are located in a different directories, the command could be set up like this:
+If the WGS files are located in different directories from the working directory, the command could be set up like this:
 
 ```
 # set FASTA input directories (leave slashes at the end!)
