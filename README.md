@@ -1,7 +1,11 @@
+<img width="510" height="450" alt="NettieStevens" src="https://github.com/user-attachments/assets/5f4823d3-76dd-487b-8dbd-09811261b590" />
+
+"Nettie Stevens" by Cathleen Shaw
+
 # CBS-tools
 A collection of k-mer based tools for sex chromosome identification, assembly, and exploration: the Final Frontier!
 
-The following tools are documented in our manuscript [link] and outline the steps we usually take in exploring dioecious assemblies. However they do not have to be used sequentially. Users can use just CBS-Discovery. Users can skip CBS-Phase and pipe the CBS-Discovery k-mer lists straight into CBS-Frontier. Optionally, if users already have k-mer lists but would like to explore the linked genes and assembly distributions, those non-CBS lists can be imported to CBS-Frontier.
+The following tools are documented in our preprint [link] and outline the steps we usually take in exploring dioecious assemblies. However they do not have to be used sequentially. Users can use just CBS-Discovery. Users can skip CBS-Phase and pipe the CBS-Discovery k-mer lists straight into CBS-Frontier. Optionally, if users already have k-mer lists but would like to explore the linked genes and assembly distributions, those non-CBS lists can be imported to CBS-Frontier. 
 
 **CBS-Discovery**: Create sex-specific k-mers lists from WGS of multiple isolates
 - We recommend starting with 6 isolates of each sex, but not required
@@ -42,7 +46,7 @@ OR
 ### CBS-Discovery
 
 #### WGS prep
-Both long-read PacBio HiFi or short-read Illumina DNAseq files will work with CBS-tools. While we don't notice a huge difference, we recommend trimming up files before running CBS-Discovery with your favorite QC tool like [trimmomatic](https://github.com/usadellab/trimmomatic) or [fastp](https://github.com/opengene/fastp).
+Both long-read sequencing, like PacBio HiFi, or short-read sequences, like Illumina DNAseq, files will work with CBS-tools. While we don't notice a huge difference, we recommend trimming up files before running CBS-Discovery with your favorite QC tool like [trimmomatic](https://github.com/usadellab/trimmomatic) or [fastp](https://github.com/opengene/fastp).
 
 ```
 # example trimmomatic command
