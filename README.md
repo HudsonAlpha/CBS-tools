@@ -5,12 +5,14 @@ A collection of k-mer based tools for sex chromosome identification, assembly, a
 <img width="510" height="450" alt="NettieStevens" src="https://github.com/user-attachments/assets/5f4823d3-76dd-487b-8dbd-09811261b590" />
 </p>
 
+<p align="right">
 "Nettie Stevens" by Cathleen Shaw
+</p>
 
 Developed by S. Carey, L. Whitt, and L. Akozbek, with input from P. Bentz, E. Armstrong, and A. Harkess. Pipeline maintained by S. Carey, L. Whitt, and HudsonAlpha Institute for Biotechnology.
 
 ## Overview
-The following tools are documented in our preprint [link] and outline the steps we usually take in exploring dioecious assemblies. However they do not have to be used sequentially. Users can use just CBS-Discovery. Users can skip CBS-Phase and pipe the CBS-Discovery k-mer lists straight into CBS-Frontier. Optionally, if users already have k-mer lists but would like to explore the linked genes and assembly distributions, those non-CBS lists can be imported to CBS-Frontier. 
+The following tools are documented in our [preprint](https://www.biorxiv.org/content/10.64898/2026.09.23.753885v1) and outline the steps we usually take in exploring dioecious assemblies. However they do not have to be used sequentially. Users can use just CBS-Discovery. Users can skip CBS-Phase and pipe the CBS-Discovery k-mer lists straight into CBS-Frontier. Optionally, if users already have k-mer lists but would like to explore the linked genes and assembly distributions, those non-CBS lists can be imported to CBS-Frontier. 
 
 **CBS-Discovery**: Create sex-specific k-mers lists from WGS of multiple isolates
 - We recommend starting with 6 isolates of each sex, but not required
